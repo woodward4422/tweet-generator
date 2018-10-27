@@ -1,10 +1,9 @@
 import sys
 import random
-
+# Number of words the user wants 
 number_of_words = sys.argv[1]
-print(number_of_words)
-
-unshuffled_sentence = [] 
+unshuffled_sentence = []
+lines = open('/usr/share/dict/words').read().splitlines()
 
 # file = open('/usr/share/dict/words','r')
 # def select_line(afile):
@@ -14,17 +13,17 @@ unshuffled_sentence = []
 #         line = aline
 #     return line
 
-def random_line(fname):
-    lines = open(fname).read().splitlines()
+# Get a random line by opening the file and then using splitlines() to put it into an array, then get a random element from the array
+def random_word(all_lines):
     return random.choice(lines)
 
 
+# Gets a new word and appends it until 
 while len(unshuffled_sentence) != int(number_of_words):
-    new_line = random_line('/usr/share/dict/words')
-    unshuffled_sentence.append(new_line)
-    
-shuffled = random.sample(unshuffled_sentence,len(unshuffled_sentence))
-print(" ".join(map(lambda s: s.strip(),shuffled)))
+    new_word = random_word(lines)
+    unshuffled_sentence.append(new_word)
+
+print(" ".join(unshuffled_sentence))
 
 
 
