@@ -1,4 +1,6 @@
+
 # This Script will take in a book of text and will analyze the text to create a histogram for the frequency of the words in the list
+import random
 histogram_dict = {}
 
 # Takes in text and will return a histogram(dictionary) of word frequency that will follow the form "word":frequency
@@ -8,6 +10,7 @@ def histogram(source_text):
             histogram_dict[word] += 1
         else:
             histogram_dict[word] = 1
+    
     return histogram_dict
 
 #Takes in a histogram and will return the total count of unique words in the histogram
@@ -20,6 +23,13 @@ def frequency(word,histogram_dict):
         return histogram_dict[word]
     else:
         print("That is not a word in the histogram")
+
+def random_word(histogram_dict):
+    ''' Takes in a Dictionary in the format of a histogram and returns a random key '''
+    words = histogram_dict.keys()
+    rand_word = random.choice(words)
+    return rand_word
+
 
 
 
