@@ -25,10 +25,19 @@ def frequency(word,histogram_dict):
         print("That is not a word in the histogram")
 
 def random_word(histogram_dict):
-    ''' Takes in a Dictionary in the format of a histogram and returns a random key '''
-    words = histogram_dict.keys()
-    rand_word = random.choice(words)
-    return rand_word
+    ''' Takes in a Dictionary in the format of a histogram and returns a key based off a weighted sampling '''
+    #Create an accumulator value to be a running total 
+    accumulator = 0 
+    # Gets a uniform random number between 0 and the sum total of all the frequencies
+    rand_sum = random.randint(0,sum(histogram_dict.values()))
+    #The iteritems() method will give me a interator over 
+    for key, value in histogram_dict.iteritems():
+        accumulator += value
+        if accumulator >= rand_sum:
+            return key
+        else: 
+            continue
+    
 
 
 

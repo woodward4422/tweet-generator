@@ -25,6 +25,15 @@ def random_word(histogram_dict):
         else: 
             continue
 
+def random_test(histogram_dict):
+    test_dict = {}
+    for _ in range(0,1000):
+        word_selected = random_word(histogram_dict)
+        if word_selected in test_dict:
+            test_dict[word_selected] += 1
+        else:
+            test_dict[word_selected] = 1
+    return test_dict
     
 
     
@@ -34,7 +43,9 @@ if __name__ == "__main__":
     with open('wordtest.txt', 'r') as myfile:
         words = myfile.read().replace('\n', '').lower().split()
     histo = histogram(words)
+    print(histo)
     print(random_word(histo))
+    print(random_test(histo))
 
 
     
