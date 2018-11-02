@@ -30,7 +30,7 @@ def random_word(histogram_dict):
     accumulator = 0 
     # Gets a uniform random number between 0 and the sum total of all the frequencies
     rand_sum = random.randint(0,sum(histogram_dict.values()))
-    #The iteritems() method will give me a interator over 
+    #The iteritems() method will give me a iterator over 
     for key, value in histogram_dict.iteritems():
         accumulator += value
         if accumulator >= rand_sum:
@@ -48,7 +48,7 @@ def random_word(histogram_dict):
 
 
 if __name__ == "__main__":
-    with open('book.txt', 'r') as myfile:
+    with open('fish.txt', 'r') as myfile:
         words = myfile.read().replace('\n', '').lower().split()
     histo = histogram(words)
     print(histo)
