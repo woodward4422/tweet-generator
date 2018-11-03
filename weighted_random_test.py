@@ -35,14 +35,20 @@ def random_test(histogram_dict):
         else:
             test_dict[word_selected] = 1
     return test_dict
+
+def open_file():
+    '''This will open and then return the file '''
+    with open('fish.txt', 'r') as myfile:
+        words = myfile.read().replace('\n', '').lower().split()
+    return words
+
     
 
     
 
 
 if __name__ == "__main__":
-    with open('fish.txt', 'r') as myfile:
-        words = myfile.read().replace('\n', '').lower().split()
+    words = open_file()
     histo = histogram(words)
     print(histo)
     print(random_word(histo))
