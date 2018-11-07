@@ -23,11 +23,11 @@ class Listogram(list):
         if word in self:
             index = self._index(word)
             element = self[index]
-            element[1] += 1
-            self.tokens += 1
+            element[1] += count
+            self.tokens += count
         else: 
             self.append([word,count])
-            self.tokens += 1
+            self.tokens += count
             self.types += 1
 
 
