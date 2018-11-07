@@ -1,8 +1,9 @@
 import random 
-histogram_dict = {}
+
 
 # Takes in text and will return a histogram(dictionary) of word frequency that will follow the form "word":frequency
 def histogram(source_text):
+    histogram_dict = {}
     for word in source_text:
         if word in histogram_dict:
             histogram_dict[word] += 1
