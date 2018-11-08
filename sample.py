@@ -3,6 +3,9 @@ import word_count
 
 def weighted_random_word(histogram_dict):
     ''' Takes in a Dictionary in the format of a histogram and returns a random key '''
+    # Raise an exception if we are given an empty histogram
+    if len(histogram_dict) == 0:
+        raise Exception("Attempted to random sample from an empty histogram")
     #Create an accumulator value to be a running total 
     accumulator = 0 
     # Gets a uniform random number between 0 and the sum total of all the frequencies
@@ -15,7 +18,7 @@ def weighted_random_word(histogram_dict):
             return key
         else: 
             continue
-# TODO: Add a tester function to test the weighted selection
+# TODO: Fix this weighted random test because its broke 
 
 def weighted_random_test():
     ''' Tests to make sure that the weighted random sampling is correct ''' 
