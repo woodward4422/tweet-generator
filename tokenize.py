@@ -1,4 +1,6 @@
-def cleanup_text(raw_text):
+# Module for cleaning up and creating corpus text and also tokenizing the text to be returned as a list
+
+def tokenize_text(raw_text):
     ''' Takes in raw text from a text file and will return a split()(list) of all the words in the text file '''
     try:
         with open(raw_text, 'r') as myfile:
@@ -7,7 +9,7 @@ def cleanup_text(raw_text):
         raise Exception('Could not open file, should be in proper .txt format')
 
 if __name__ == "__main__":
-    print(cleanup_text("fish.txt"))
-    print(cleanup_text("fishyyyy"))
+    print(tokenize_text("fish.txt"))
+    print(tokenize_text("fishyyyy"))
     
 
