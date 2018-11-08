@@ -5,7 +5,7 @@ import sys
 # module for generating histograms from a list of tokens
 
 def create_histogram(text_file):
-    ''' Takes in a raw text file to be tokenized and then will return a dictogram '''
+   ''' Takes in a raw text file to be tokenized and then will return a dictogram object '''
    tokenized_word = tokenize.tokenize_text(text_file)
    return Dictogram(tokenized_word)
 
