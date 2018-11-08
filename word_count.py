@@ -1,13 +1,12 @@
-import tokenize
+
 from dictogram import Dictogram
 import sys
 
 # module for generating histograms from a list of tokens
 
-def create_histogram(text_file):
-   ''' Takes in a raw text file to be tokenized and then will return a dictogram object '''
-   tokenized_word = tokenize.tokenize_text(text_file)
-   return Dictogram(tokenized_word)
+def create_histogram(tokenized_words):
+   ''' Takes in a tokenized list of the text and then will return a dictogram object '''
+   return Dictogram(tokenized_words)
 
 
 if __name__ == "__main__":

@@ -1,22 +1,17 @@
 from flask import Flask 
 from flask import request
 app = Flask(__name__)
-# import tokenize
-# import word_count
-# import sentence
-import weighted_random_test 
+import tokenize_text
+import word_count
+import sentence
 
 @app.route('/')
 def get_string():
-    total_words = int(request.args.get('words')) 
+    # total_words = int(request.args.get('words')) 
     total_string = ""
-    words = weighted_random_test.open_file()
-    histo = weighted_random_test.histogram(words)
-
-    for _ in range(total_words):
-        rand_word = weighted_random_test.random_word(histo)
-        total_string = total_string + " " +  rand_word
-    return total_string
+    token_text = tokenize_text.tokenize_text('fish.txt')
+    histo = word_count.create_histogram(token_text)
+    return sentence.generate_sentence(histo,10)
 
 # TODO: Add terminal args functionality to run the script
 # script = argv[0]
