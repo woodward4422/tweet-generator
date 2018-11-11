@@ -11,6 +11,19 @@ def generate_sentence(histogram,amount_of_words):
         raise Exception("Attempted to make a sentence with no words given")
     return " ".join(word_list)
 
+def generate_markov_sentence(word_histogram,markov_histogram,amount_of_words):
+    word_list = []
+    if len(word_histogram) == 0:
+        raise Exception("Attempted to make a sentence with no words given")
+    word = sample.weighted_random_word(word_histogram)
+        
+
+    while len(word_list) is not amount_of_words:
+        word_list.append(word)
+        word = sample.weighted_random_word(markov_histogram[word])
+    return " ".join(word_list)
+
+
 if __name__ == "__main__":
     print(generate_sentence(word_count.create_histogram('fish.txt'),5))
 
