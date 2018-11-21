@@ -15,7 +15,7 @@ def test_markov_model(list_of_words):
 def markov_walk(list_of_words):
     markov_dict = Markov_Dictogram(list_of_words)
     regular_dictogram = Dictogram(list_of_words)
-    print(sentence.generate_markov_sentence(regular_dictogram,markov_dict, 50))
+    print(sentence.generate_markov_sentence(regular_dictogram,markov_dict, 10))
 
 
 
