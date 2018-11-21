@@ -114,15 +114,14 @@ class LinkedList(object):
         # TODO: Check if node's data satisfies given quality function
 
         if self.head is not None:
-            current = self.head
-            while current is not None: 
+            current = self.head 
+            for _ in range(self.length()):
                 if quality(current.data):
-                    return current
+                    return current.data
                 else:
                     current = current.next
-                return None
-        else:
             return None
+
 
         
 
