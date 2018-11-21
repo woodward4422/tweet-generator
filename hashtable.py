@@ -132,9 +132,10 @@ class HashTable(object):
         bucket = self.buckets[self._bucket_index(key)]
 
         delete_key = bucket.find(lambda possible_key: possible_key[0] == key)
+        
         if delete_key is not None:
-            value = self.get(delete_key)
-            bucket.delete((delete_key,value))
+            value = self.get(delete_key[0])
+            bucket.delete(delete_key)
         else:
             raise KeyError('Key not found: {}'.format(key))
         
