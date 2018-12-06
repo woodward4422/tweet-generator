@@ -1,8 +1,8 @@
 from dictogram import Dictogram
-class Markov_Dictogram(dict):
+class Second_Markov_Dictogram(dict):
 
     def __init__(self,word_list=None):
-        super(Markov_Dictogram,self).__init__
+        super(Second_Markov_Dictogram,self).__init__
         if word_list is not None:
             length = len(word_list)-2
             
