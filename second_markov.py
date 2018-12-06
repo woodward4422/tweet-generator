@@ -3,13 +3,11 @@ class Markov_Dictogram(dict):
 
     def __init__(self,word_list=None):
         super(Markov_Dictogram,self).__init__
-        print("word list: {}".format(word_list))
         if word_list is not None:
-            length = len(word_list)-1
-            print("Length: ", length)
-
+            length = len(word_list)-2
+            
             for i in range(0, length):
-                self.add_count(word_list[i],word_list[i+1])
+                self.add_count((word_list[i],word_list[i+1]),word_list[i+2])
 
     def add_count(self,word,next_word):
         if word in self:
@@ -25,4 +23,3 @@ class Markov_Dictogram(dict):
             return self[first_word][second_word]
         else:
             return 0
-        

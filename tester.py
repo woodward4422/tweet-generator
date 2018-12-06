@@ -21,5 +21,5 @@ def markov_walk(list_of_words):
 
 
 if __name__ == "__main__":
-    list_of_words = tokenize_text.tokenize_text("gatsby.txt")
+    list_of_words = tokenize_text.tokenize_text("fish.txt")
     markov_walk(list_of_words)
