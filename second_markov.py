@@ -9,14 +9,14 @@ class Second_Markov_Dictogram(dict):
             for i in range(0, length):
                 self.add_count((word_list[i],word_list[i+1]),word_list[i+2])
 
-    def add_count(self,word,next_word):
-        if word in self:
-            if next_word in self[word]:
-                self[word][next_word] += 1
+    def add_count(self,word_tuple,next_word):
+        if word_tuple in self:
+            if next_word in self[word_tuple]:
+                self[word_tuple][next_word] += 1
             else:
-                self[word][next_word] = 1
+                self[word_tuple][next_word] = 1
         else:
-            self[word] = {next_word:1}
+            self[word_tuple] = {next_word:1}
     
     def frequency(self,first_word,second_word):
         if second_word in self[first_word]:

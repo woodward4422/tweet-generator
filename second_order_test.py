@@ -6,7 +6,7 @@ import sentence
 def second_order_markov_walk():
     tokenized_text = tokenize_text.tokenize_text('gatsby.txt')
     markov_dicto = Second_Markov_Dictogram(tokenized_text)
-    return sentence.generate_second_order_markov_sentence(markov_dicto,10)
+    return sentence.generate_second_order_markov_sentence(markov_dicto,20)
 
 
 
