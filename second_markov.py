@@ -23,3 +23,4 @@ class Second_Markov_Dictogram(dict):
             return self[first_word][second_word]
         else:
             return 0
+    

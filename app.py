@@ -20,7 +20,7 @@ def get_string():
     # token_text = tokenize_text.tokenize_text('fish.txt')
     # dicty = word_count.create_histogram(tokenize_text)
     # return sentence.generate_sentence(dicty,10)
-    tokenized_words = tokenize_text.tokenize_text('gatsby.txt')
+    tokenized_words = tokenize_text.tokenize_text('game_of_golf.txt')
     second_order_markov = Second_Markov_Dictogram(tokenized_words)
     return sentence.generate_second_order_markov_sentence(second_order_markov,10)
 
