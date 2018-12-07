@@ -8,6 +8,8 @@ def tokenize_text(text_file):
     except IOError:
         raise Exception('Could not open file, should be in proper .txt format')
 
+
+
 if __name__ == "__main__":
     print(tokenize_text("fish.txt"))
     print(tokenize_text("fishyyyy"))
