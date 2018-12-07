@@ -6,6 +6,7 @@ import sentence
 import tester
 from markov_dictogram import Markov_Dictogram
 from dictogram import Dictogram
+from second_markov import Second_Markov_Dictogram
 
 
 app = Flask(__name__)
@@ -20,9 +21,8 @@ def get_string():
     # dicty = word_count.create_histogram(tokenize_text)
     # return sentence.generate_sentence(dicty,10)
     tokenized_words = tokenize_text.tokenize_text('gatsby.txt')
-    markov_dict = Markov_Dictogram(tokenized_words)
-    regular_dictogram = Dictogram(tokenized_words)
-    return sentence.generate_markov_sentence(regular_dictogram,markov_dict, 10)
+    second_order_markov = Second_Markov_Dictogram(tokenized_words)
+    return sentence.generate_second_order_markov_sentence(second_order_markov,10)
 
     
 
