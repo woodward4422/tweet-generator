@@ -7,7 +7,7 @@ import sentence
 def create_sentence(text_file,amount_of_words):
     ''' Takes in a markov histogram and will give you a sentence ''' 
 
-    tokenized_words = tokenize_text.tokenize_text('gatsby.txt')
+    tokenized_words = tokenize_text.tokenize_text(text_file)
     second_order_markov = Second_Markov_Dictogram(tokenized_words)
     return sentence.generate_second_order_markov_sentence(second_order_markov,10)
 
