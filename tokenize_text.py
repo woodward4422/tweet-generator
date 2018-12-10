@@ -8,9 +8,12 @@ def tokenize_text(text_file):
         with open(text_file, 'r') as myfile:
             # cleaned_text = re.sub('[^a-zA-Z\s]*$','',myfile.read())
             # return cleaned_text.replace('\n', '').lower().split()
-            cleaned_text = myfile.read().translate(None, string.punctuation)
-            cleaner_text = re.sub('[^a-zA-Z\s]*$','',cleaned_text) 
-            return cleaner_text.replace('\n', ' ').lower().split()
+            cleaned_text = myfile.read().translate(string.punctuation)
+
+            cleaner_text = re.sub('[^a-zA-Z\s]*$','',cleaned_text)
+            white_list = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+            cleanest_text = ''.join(filter(white_list.__contains__,cleaner_text))
+            return cleanest_text.lower().split()
     except IOError:
         raise Exception('Could not open file, should be in proper .txt format')
 
