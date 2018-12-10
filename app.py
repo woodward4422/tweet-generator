@@ -1,4 +1,4 @@
-from flask import Flask 
+from flask import Flask, render_template
 from flask import request
 import tokenize_text 
 import word_count
@@ -12,17 +12,15 @@ from second_markov import Second_Markov_Dictogram
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-# Comment
+# Commentgi
 @app.route('/')
 def get_string():
-    ''' Route will generate a sentence of 10 random words based from the fish.txt corpus '''
-    # total_words = int(request.args.get('words'))
-    # token_text = tokenize_text.tokenize_text('fish.txt')
-    # dicty = word_count.create_histogram(tokenize_text)
-    # return sentence.generate_sentence(dicty,10)
-    tokenized_words = tokenize_text.tokenize_text('game_of_golf.txt')
-    second_order_markov = Second_Markov_Dictogram(tokenized_words)
-    return sentence.generate_second_order_markov_sentence(second_order_markov,12)
+    ''' Route will generate a sentence created with a markov chain and analyzed from the rules of golf handbook '''
+    with app.app_context(), app.test_request_context():
+        tokenized_words = tokenize_text.tokenize_text('game_of_golf.txt')
+        second_order_markov = Second_Markov_Dictogram(tokenized_words)
+        final_sentence = sentence.generate_second_order_markov_sentence(second_order_markov,12)
+        return render_template("main.html",sentence=final_sentence)
 
     
 
