@@ -1,12 +1,24 @@
 <head>
-    <title>Cartman Tweet Generator</title>
+    <title>Game of Golf Tweet Generator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="shortcut icon" type="image/png" href="./static/assets/favicon-32x32.png"/>
 </head>
 <body>
-<div class="container"> 
-        
-    <p class="text">{{sentence}}</p>
+<div class= container>
+    <div class=graphic> 
+        <img src="./static/assets/background.jpg" alt="background">
+    </div>
+
+    
+    <div class=sentence>
+        <h1> Golf Tweet Generator</h1>
+        <h2>{{sentence}}</h2>
+        <button> Tweet It! </button>
+        <button> New Quote </button>
+
+
+    </div>
+    
 
  
 </div>

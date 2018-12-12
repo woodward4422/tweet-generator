@@ -12,7 +12,6 @@ from second_markov import Second_Markov_Dictogram
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-# Commentgi
 @app.route('/')
 def get_string():
     ''' Route will generate a sentence created with a markov chain and analyzed from the rules of golf handbook '''
