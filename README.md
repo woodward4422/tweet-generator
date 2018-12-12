@@ -3,6 +3,9 @@ Using Python, I created a project that users Markov Chains as an intro to NLP to
 
 # Important Files Overview
 
+## app.py
+This is where all the flask routes are handled
+
 ## tokenize_text.py
 This file is responsible for taking in a text file and taking out the junk in the the file, as long as returning all the words in an array that is usable 
 
