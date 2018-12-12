@@ -9,7 +9,6 @@ def tokenize_text(text_file):
             # cleaned_text = re.sub('[^a-zA-Z\s]*$','',myfile.read())
             # return cleaned_text.replace('\n', '').lower().split()
             cleaned_text = myfile.read().translate(string.punctuation)
-
             cleaner_text = re.sub('[^a-zA-Z\s]*$','',cleaned_text)
             white_list = set('abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ')
             cleanest_text = ''.join(filter(white_list.__contains__,cleaner_text))
