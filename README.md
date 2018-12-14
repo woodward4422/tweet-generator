@@ -25,6 +25,18 @@ This was a mandatory Hash Table data structure implementation, not related to my
 ## game_of_golf.txt
 Used as my corpus to be tokenized and then passed into my Second_Markov_Dictogram to create the markov model which will generate a realistic sentence about the rules of golf
 
+## histogram_list.py
+List of lists histogram
+
+## histogram_tuple.py
+List of tuples histogram 
+
+## histograms_dict.py
+Histogram implemented with a dictionary 
+
+## sample.py
+Random weighted sampling from the histogram. 
+
 ## All the rest 
 Most of the files are just testing files created while we were learning different topics in my CS 1.2 Intro to Data Structures course. I hope to refactor the code in the next few weeks once this assigment gets graded in order to improve the readability of the code base 
 
