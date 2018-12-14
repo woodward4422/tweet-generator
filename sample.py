@@ -18,7 +18,7 @@ def weighted_random_word(histogram_dict):
             return key
         else: 
             continue
-# TODO: Fix this weighted random test because its broke 
+
 
 def weighted_random_test():
     ''' Tests to make sure that the weighted random sampling is correct ''' 

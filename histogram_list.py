@@ -39,7 +39,7 @@ def frequency(word,histogram_list):
         print("That is not a word in the histogram")
 
 if __name__ == "__main__":
-    with open('book.txt', 'r') as myfile:
+    with open('fish.txt', 'r') as myfile:
         words = myfile.read().replace('\n', '').lower().split()
     histo_list = histogram(words)
     print(histo_list)

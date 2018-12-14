@@ -25,12 +25,12 @@ def frequency(word,histogram_tuple):
         print("That is not a word in the histogram")
 
 if __name__ == "__main__":
-    with open('book.txt', 'r') as myfile:
+    with open('fish.txt', 'r') as myfile:
         words = myfile.read().replace('\n', '').lower().split()
     histo_tuple = histogram(words)
     print(histo_tuple)
     print("Unique Words: {}".format(unique_words(histo_tuple)))
-    freq_word = "the"
+    freq_word = "fish"
     print("Frequency of {} in the histogram is: {}".format(freq_word,frequency(freq_word,histo_tuple)))
 
 

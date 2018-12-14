@@ -53,7 +53,7 @@ if __name__ == "__main__":
     histo = histogram(words)
     print(histo)
     print("Unique Words: {}".format(unique_words(histo)))
-    freq_word = "the"
+    freq_word = "fish"
     print("Frequency of {} in the histogram is: {}".format(freq_word,frequency(freq_word,histo)))
     random_selected_word = random_word(histo)
     print("Random Word: {}".format(random_selected_word))
